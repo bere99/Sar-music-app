@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl"?>
+<!DOCTYPE visitas SYSTEM "audios.dtd">
+<audios ultid="4">
+<audio id="1">
+    <fecha>2019/11/15 19:04</fecha>
+    <autor>Iñigo Bereciartua</autor>
+    <titulo>Bm</titulo>
+    <comentario>Esto es un nuevo audio</comentario>
+    <extension>.wav</extension>
+    <image>image.png</image>
+</audio>
+<audio id="2">
+    <fecha>2019/11/19 09:13</fecha>
+    <autor>Iñigo Bereciartua</autor>
+    <titulo>prueba2</titulo>
+    <comentario>Prueba</comentario>
+    <extension>.wav</extension>
+    <image>image.png</image>
+    </audio>
+<audio id="3">
+    <fecha>2019/11/19 10:16</fecha>
+    <autor>Iñigo Bereciartua</autor>
+    <titulo>sxasc</titulo>
+    <comentario>s</comentario>
+    <extension>.wav</extension>
+    <image>image.png</image>
+    </audio>
+<audio id="4">
+    <fecha>2019/11/19 11:17</fecha>
+    <autor>Iñigo Bereciartua</autor>
+    <titulo>prueba</titulo>
+    <comentario>ibi</comentario>
+    <extension>.mp3</extension>
+    <image>image.png</image>
+    </audio>
+</audios>

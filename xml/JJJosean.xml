@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "dtd/user.dtd">
+<user>
+    <userInfo>
+        <name>JJJosean</name>
+    </userInfo>
+    <playlists>
+        <playlist name="Mi playlist">
+            <songID>1</songID>
+            <songID>2</songID>
+            <songID>1</songID>
+            <songID>2</songID>
+            <songID>1</songID>
+            <songID>2</songID>
+            <songID>1</songID>
+            <songID>2</songID>
+        </playlist>
+        <playlist name="Picadores de codigo">
+            <songID>2</songID>
+            <songID>1</songID>
+        </playlist>
+    </playlists>
+</user>

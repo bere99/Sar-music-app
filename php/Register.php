@@ -10,7 +10,7 @@
   <section class="main" id="s1">
     <div class="row">
 
-        <div class="column" style="background-color:#aaa;">
+        <div class="column" id="soyusuario" style=" ">
             
             <form action="Register.php" method="post" enctype="multipart/form-data">
                 <h1>Register</h1>        
@@ -18,7 +18,10 @@
                     Email: <input type="email" name="email" id="email" required>
 
                     <br>
-                    Nombre y Apellido: <input type="text" name="name" pattern="^.+ .+$" required>
+                    Nombre: <input type="text" name="name" pattern="^.+$" required>
+                    <br>
+    
+                    Apellidos:<input type="text" name="apellidos" pattern="^.+ .+$" required>
                     <br>		
                     Contrase&ntilde;a: <input type="password" id="pass" name="pass" pattern=".+"/ required>  
 
@@ -27,32 +30,32 @@
                         <br>
                     <input id="file-input" name="file-input" type="file"/>
                         <br>          			
-                    <input type="submit" id="boton" value="Enviar" name="boton" >						
-            </form>
+                    <input type="submit" id="boton" value="Enviar" name="boton" >	                    					
+            </form>           
         </div>
 
-        <div class="column" style="background-color:#aaa;">
+        
+
+        <div id='registerArtista' class="column" style="">
             <form action="Register.php" method="post" enctype="multipart/form-data">
                 <h1>Register for artists</h1>        
-                    <br>
-                    Email: <input type="email" name="email" id="email" required>
-                    <br>
-                    Nombre de artista: <input type="text" name="nomArtista" required>
-                    <br>		
-                    Contrase&ntilde;a: <input type="password" id="pass" name="pass" pattern=".+"/ required>  
-                    <br>
-                    Repetir Contrase&ntilde;a: <input type="password" name="pass2" pattern=".+"/ required> 
-                        <br>
-                    <input id="file-input" name="file-input" type="file"/>
-                        <br>          			
-                    <input type="submit" id="boton" value="Enviar" name="boton"  >						
+                <br>
+                Email: <input type="email" name="email" id="email" required>
+                <br>
+                Nombre de artista: <input type="text" name="nomArtista" required>
+                <br>		
+                Contrase&ntilde;a: <input type="password" id="pass" name="pass" pattern=".+"/ required>  
+                <br>
+                Repetir Contrase&ntilde;a: <input type="password" name="pass2" pattern=".+"/ required> 
+                <br>
+                <input id="file-input" name="file-input" type="file"/>
+                <br>          			
+                <input type="submit" id="boton" value="Enviar" name="boton"  >						
             </form>
         </div>
     </div>
 
     <?php
-
-    
 
         if(isset($_POST['email'])){
 
@@ -84,11 +87,18 @@
                
 
                 if(isset($_POST['name'])){        
-                    $name=$_POST['name'];
+                    $nombre=$_POST['name'];
+                    $apellidos=$_POST['apellidos'];  
+                    $nombre=$mysqli->real_escape_string($nombre);
+                    $apellidos=$mysqli->real_escape_string($apellidos);
+                    $email=$mysqli->real_escape_string($email);
+                    $pass=$mysqli->real_escape_string($pass);
+                    $rutaImg=$mysqli->real_escape_string($rutaImg);
                     
-                    mysqli_query( $mysqli,"INSERT INTO USUARIO (Email, Nombre,Apellidos, Pass,rutaImg) VALUES ('$email','$name', '$pass','$rutaImg')");
-                
+                    $pass=crypt($pass,"badhum");
 
+                    mysqli_query( $mysqli,"INSERT INTO USUARIO (Email, Nombre, Apellidos, Pass,rutaImg) VALUES ('$email','$nombre', '$apellidos', '$pass','$rutaImg')");
+                    
                     $url="{$email}.xml";
                     $objetoXML=new XMLWriter();
                     $objetoXML->openURI($url);
@@ -105,9 +115,10 @@
                     unset($objetoXML);
                     rename("./$email.xml","../users/$email.xml");
 
-          
-                
-                
+
+
+
+
                 }else if(isset($_POST['nomArtista'])){
                     $nomArtista=$_POST['nomArtista'];
                     mysqli_query( $mysqli,"INSERT INTO ARTISTA (Correo,nomArtista, Pass, rutaImg) VALUES ('$email', '$nomArtista','$pass','$rutaImg')");
@@ -124,7 +135,6 @@
             }
         }
     ?>
-
 
     </section>
     

@@ -1,3 +1,6 @@
+<?php
+session_start():
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,6 +25,17 @@
             <br>
             Comentario: <input id="comentario" name="comentario" type="text"/>
             <br>
+            
+            <input type="radio"  value="Rock">Rock</input>
+            <input type="radio"  value="Pop">Pop</input>
+            <input type="radio"  value="Indie">Indie</input>
+            <input type="radio"  value="K-Pop">Kpop</input>
+            <input type="radio"  value="EDM">EDM</input>
+            <input type="radio"  value="Jazz">Jazz</input>
+            <input type="radio"  value="Metal">Metal</input>
+            <input type="radio"  value="K-Pop">Kpop</input>
+            <input type="radio"  value="Blues">Blues</input>
+            
             <input type="submit" value="Subir"/>
         </form>
         

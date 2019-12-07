@@ -1,59 +1,4 @@
-<?php 
-    session_start();
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <?php include '../html/Head.html'?>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-  
-  
-</head>
-<body>
-  <?php include '../php/Menus.php' ?>
-  <section>
-    <div class="row">
-        
-        <div class="column" style="background-color:#aaa;">
-            <form action="Login.php" method="post">
-                <h1>Login</h1>
-                    <div>
-                    Email: <input type="text" name="email" >
-                    </div>
-                    <br>
-
-                    <div>
-                    Contrase&ntilde;a: <input type="password" name="pass">
-                    </div>
-                    <br>
-
-                    <input type="submit" value="Enviar" name="boton" >			
-                    
-                    <br>
-            </form>
-
-        </div>
-
-        <div class="column" style="background-color:#aaa;">
-            <form action="Login.php" method="post">
-                <h1>Login for artists</h1>
-                    <div>
-                    Nombre Artista: <input type="text" name="nomArtista" >
-                    </div>
-                    <br>
-
-                    <div>
-                    Contrase&ntilde;a: <input type="password" name="pass">
-                    </div>
-                    <br>
-
-                    <input type="submit" value="Enviar" name="boton" >			
-                    
-                    <br>
-            </form>
-        </div>
-    </div>    
-    <?php
+<?php
         $server="localhost";
         $user="root";
         $passw="";
@@ -127,10 +72,3 @@
         }
 
     ?>
-
-    
-
-  </section>
-  
-</body>
-</html>
